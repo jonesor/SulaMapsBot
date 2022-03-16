@@ -1,10 +1,10 @@
 # sula maps twitter bot
 
-
 # Twitter R package
 # install.packages("rtweet")
 # library(twitteR)
 library(rtweet)
+library(stringr)
 
 # Create Twitter token
 SulaMapsBot_token <- rtweet::create_token(
@@ -23,10 +23,14 @@ occasionalHashTags <- paste0("#", c("gift", "perfectgift", "present", "placemap"
 # Tweet with example art
 
 # Randomly chosen
-tweetMedia <- list.files(pattern = "jpeg", full.names = FALSE)
-selectedMedia <- sample(tweetMedia, size = 1)
+tweetMedia <- list.files(path = "tweetImages/",pattern = "jpeg", full.names = TRUE)
+selectedMedia <- sample(tweetMedia, size = 2)
 selectedMedia_fileName <- basename(selectedMedia)
-mediaPlaceNames <- gsub(pattern = "_.*", replacement = "", x = selectedMedia_fileName)
+mediaPlaceNames <- unique(gsub(pattern = "_.*", replacement = "", x = selectedMedia_fileName))
+
+#split hyphenated
+mediaPlaceNames <- unlist(str_split(mediaPlaceNames,pattern = "-"))
+
 (placeHashTags <- paste0("#", mediaPlaceNames))
 
 textPhrases <- c("I love to make beautiful maps!",
