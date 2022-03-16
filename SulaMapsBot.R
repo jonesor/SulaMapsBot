@@ -21,8 +21,8 @@ occasionalHashTags <- paste0("#", c("gift", "perfectgift", "present", "weddingpr
 # Tweet with example art
 
 # Randomly chosen
-tweetMedia <- list.files(path = file.path("SulaMapsBot", "tweetImages"), full.names = TRUE)
-selectedMedia <- sample(tweetMedia, size = 1)
+tweetMedia <- list.files(path = file.path("tweetImages"), full.names = TRUE)
+selectedMedia <- sample(tweetMedia, size = 2)
 selectedMedia_fileName <- basename(selectedMedia)
 mediaPlaceNames <- gsub(pattern = "_.*", replacement = "", x = selectedMedia_fileName)
 (placeHashTags <- paste0("#", mediaPlaceNames))
@@ -45,13 +45,13 @@ textPhrases <- c("I love to make beautiful maps!",
   collapse = " "
 ))
 
-selectedMedia_gh <- file.path("https://raw.githubusercontent.com/jonesor/sulamaps/main",selectedMedia)
+#selectedMedia_gh <- file.path("https://raw.githubusercontent.com/jonesor/sulamaps/main",selectedMedia)
 
 # Download the image to a temporary location
-temp_file <- tempfile()
-download.file(selectedMedia_gh[1], temp_file)
+#temp_file <- tempfile()
+#download.file(selectedMedia_gh[1], temp_file)
 
 (composedTweet <- paste0(c(tweetText, hashTagText), collapse = " "))
 
-post_tweet(composedTweet, media = temp_file, token = SulaMapsBot_token)
+post_tweet(composedTweet, media = selectedMedia, token = SulaMapsBot_token)
 

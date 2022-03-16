@@ -21,4 +21,4 @@ jobs:
       - name: Install rtweet package
         run: Rscript -e 'install.packages("rtweet", dependencies = TRUE)'
       - name: Create and post tweet
-        run: Rscript SulaMapsBot/SulaMapsBot.R
+        run: Rscript SulaMapsBot.R
