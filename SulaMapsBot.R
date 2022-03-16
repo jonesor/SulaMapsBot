@@ -1,10 +1,10 @@
 # sula maps twitter bot
 
+
 # Twitter R package
 # install.packages("rtweet")
 # library(twitteR)
 library(rtweet)
-library(ggplot2)
 
 # Create Twitter token
 SulaMapsBot_token <- rtweet::create_token(
