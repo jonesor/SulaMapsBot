@@ -31,7 +31,7 @@ mediaPlaceNames <- unique(gsub(pattern = "_.*", replacement = "", x = selectedMe
 
 # split hyphenated names into two
 mediaPlaceNames <- unlist(str_split(mediaPlaceNames, pattern = "-"))
-
+#
 (placeHashTags <- paste0("#", mediaPlaceNames))
 
 textPhrases <- c(
