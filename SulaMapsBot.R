@@ -9,10 +9,10 @@ library(stringr)
 # Create Twitter token
 SulaMapsBot_token <- rtweet::create_token(
   app = "SulaMapsBot",
-  consumer_key =    Sys.getenv("TWITTER_CONSUMER_API_KEY"),
+  consumer_key = Sys.getenv("TWITTER_CONSUMER_API_KEY"),
   consumer_secret = Sys.getenv("TWITTER_CONSUMER_API_SECRET"),
-  access_token =    Sys.getenv("TWITTER_ACCESS_TOKEN"),
-  access_secret =   Sys.getenv("TWITTER_ACCESS_TOKEN_SECRET"),
+  access_token = Sys.getenv("TWITTER_ACCESS_TOKEN"),
+  access_secret = Sys.getenv("TWITTER_ACCESS_TOKEN_SECRET"),
   set_renv = FALSE
 )
 
@@ -22,25 +22,27 @@ occasionalHashTags <- paste0("#", c("gift", "perfectgift", "present", "placemap"
 
 # Tweet with example art
 
-# Randomly chosen
-tweetMedia <- list.files(path = "tweetImages",pattern = "jpeg", full.names = TRUE)
+# Randomly chosen image
+tweetMedia <- list.files(path = "tweetImages", pattern = "jpeg", full.names = TRUE)
 selectedMedia <- sample(tweetMedia, size = 2)
 selectedMedia_fileName <- basename(selectedMedia)
-selectedMedia_fileName <- gsub(pattern = " ",replacement = "",selectedMedia_fileName)
+selectedMedia_fileName <- gsub(pattern = " ", replacement = "", selectedMedia_fileName)
 mediaPlaceNames <- unique(gsub(pattern = "_.*", replacement = "", x = selectedMedia_fileName))
 
-#split hyphenated
-mediaPlaceNames <- unlist(str_split(mediaPlaceNames,pattern = "-"))
+# split hyphenated names into two
+mediaPlaceNames <- unlist(str_split(mediaPlaceNames, pattern = "-"))
 
 (placeHashTags <- paste0("#", mediaPlaceNames))
 
-textPhrases <- c("I love to make beautiful maps!",
-                 "These stunning maps are designed in Denmark.", 
-                 "Are you looking for an unusual gift?", 
-                 "Looking for a reminder of a special place?", 
-                 "Searching for some trendy wall decor?")
-(tweetText <- 
-    paste(sample(textPhrases, size = 1),"Check out my @etsy shop (link in bio).", sep = " ")
+textPhrases <- c(
+  "I love to make beautiful maps!",
+  "These stunning maps are designed in Denmark.",
+  "Are you looking for an unusual gift?",
+  "Looking for a reminder of a special place?",
+  "Searching for some trendy wall decor?"
+)
+(tweetText <-
+  paste(sample(textPhrases, size = 1), "Check out my @etsy shop (link in bio).", sep = " ")
 )
 
 (hashTagText <- paste(
@@ -56,5 +58,3 @@ textPhrases <- c("I love to make beautiful maps!",
 
 
 post_tweet(composedTweet, media = selectedMedia, token = SulaMapsBot_token)
-
-
