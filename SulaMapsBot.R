@@ -4,6 +4,7 @@
 # install.packages("rtweet")
 # library(twitteR)
 library(rtweet)
+library(ggplot2)
 
 # Create Twitter token
 SulaMapsBot_token <- rtweet::create_token(
@@ -17,7 +18,7 @@ SulaMapsBot_token <- rtweet::create_token(
 
 # Hash tags ----
 alwaysHashTags <- paste0("#", c("artposter", "cartography", "minimalist", "maps", "poster"))
-occasionalHashTags <- paste0("#", c("gift", "perfectgift", "present", "weddingpresent"))
+occasionalHashTags <- paste0("#", c("gift", "perfectgift", "present", "placemap"))
 
 # Tweet with example art
 
@@ -47,6 +48,7 @@ textPhrases <- c("I love to make beautiful maps!",
 ))
 
 (composedTweet <- paste0(c(tweetText, hashTagText), collapse = " "))
+
 
 post_tweet(composedTweet, media = selectedMedia, token = SulaMapsBot_token)
 
