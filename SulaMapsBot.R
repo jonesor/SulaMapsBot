@@ -23,9 +23,10 @@ occasionalHashTags <- paste0("#", c("gift", "perfectgift", "present", "placemap"
 # Tweet with example art
 
 # Randomly chosen
-tweetMedia <- list.files(path = "tweetImages/",pattern = "jpeg", full.names = TRUE)
+tweetMedia <- list.files(path = "tweetImages",pattern = "jpeg", full.names = TRUE)
 selectedMedia <- sample(tweetMedia, size = 2)
 selectedMedia_fileName <- basename(selectedMedia)
+selectedMedia_fileName <- gsub(pattern = " ",replacement = "",selectedMedia_fileName)
 mediaPlaceNames <- unique(gsub(pattern = "_.*", replacement = "", x = selectedMedia_fileName))
 
 #split hyphenated
