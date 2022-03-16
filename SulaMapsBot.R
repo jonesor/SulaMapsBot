@@ -45,13 +45,14 @@ textPhrases <- c("I love to make beautiful maps!",
   collapse = " "
 ))
 
-#selectedMedia_gh <- file.path("https://raw.githubusercontent.com/jonesor/sulamaps/main",selectedMedia)
+selectedMedia_gh <- file.path("https://raw.githubusercontent.com/jonesor/sulamapsbot/main",selectedMedia)
 
 # Download the image to a temporary location
-#temp_file <- tempfile()
-#download.file(selectedMedia_gh[1], temp_file)
+temp_file <- tempfile()
+download.file(selectedMedia_gh[1], temp_file)
 
 (composedTweet <- paste0(c(tweetText, hashTagText), collapse = " "))
 
-post_tweet(composedTweet, media = selectedMedia, token = SulaMapsBot_token)
+#post_tweet(composedTweet, media = selectedMedia, token = SulaMapsBot_token)
+post_tweet(composedTweet, media = temp_file, token = SulaMapsBot_token)
 
