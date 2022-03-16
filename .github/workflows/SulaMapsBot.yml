@@ -1,9 +1,9 @@
 name: SulaMapsBot
 
 on:
-  push:
-    branches:
-      - main
+  schedule:
+    - cron: '12 */6 * * *'  # once every two hours
+
   
     
 jobs:
