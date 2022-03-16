@@ -1,11 +1,10 @@
 name: SulaMapsBot
 
 on:
-  #push:
-  #  branches:
-  #    - main
-  schedule:
-     - cron:  '3 */8 * * *' #every 8 hours at 45min past
+  push:
+    branches:
+      - main
+  
     
 jobs:
   SulaMapsBot-post:
