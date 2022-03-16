@@ -2,7 +2,7 @@ name: SulaMapsBot
 
 on:
   schedule:
-    - cron: '12 */6 * * *'  # once every two hours
+    - cron: '15 */6 * * *'  # once every two hours
 
   
     
