@@ -4,9 +4,9 @@ on:
   push:
     branches:
       - main
-  schedule:
+  #schedule:
     # * is a special character in YAML so you have to quote this string
-    - cron:  '45 */8 * * *' #every 8 hours at 45min past
+   # - cron:  '45 */8 * * *' #every 8 hours at 45min past
     
 jobs:
   SulaMapsBot-post:
