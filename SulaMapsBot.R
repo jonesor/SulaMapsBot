@@ -43,7 +43,7 @@ textPhrases <- c(
   "What do you think of these posters? Would you like one for your town?",
     "Would you like one of these posters for YOUR town?",
     "Hi everyone! Would you like to see a poster for YOUR town?",
-    "Hi everyone! Here's today's SulaMaps sample."
+    "Hi everyone! Here's today's SulaMaps sample.",
     "Maps maps maps..."
 
 )
