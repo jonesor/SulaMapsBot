@@ -39,7 +39,13 @@ textPhrases <- c(
   "These stunning maps are designed in Denmark.",
   "Are you looking for an unusual gift?",
   "Looking for a reminder of a special place?",
-  "Searching for some trendy wall decor?"
+  "Searching for some trendy wall decor?",
+  "What do you think of these posters? Would you like one for your town?",
+    "Would you like one of these posters for YOUR town?",
+    "Hi everyone! Would you like to see a poster for YOUR town?",
+    "Hi everyone! Here's today's SulaMaps sample."
+    "Maps maps maps..."
+
 )
 (tweetText <-
   paste(sample(textPhrases, size = 1), "Check out my @etsy shop (link in bio).", sep = " ")
