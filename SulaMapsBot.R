@@ -17,8 +17,8 @@ SulaMapsBot_token <- rtweet::create_token(
 )
 
 # Hash tags ----
-alwaysHashTags <- paste0("#", c("artposter", "cartography", "minimalist", "maps", "poster"))
-occasionalHashTags <- paste0("#", c("gift", "perfectgift", "present", "placemap"))
+alwaysHashTags <- paste0("#", c("ArtPoster", "cartography", "minimalist", "maps", "poster"))
+occasionalHashTags <- paste0("#", c("gift", "PerfectGift", "present","ArtMap", "placemap"))
 
 # Tweet with example art
 
@@ -41,11 +41,11 @@ textPhrases <- c(
   "Looking for a reminder of a special place?",
   "Searching for some trendy wall decor?",
   "What do you think of these posters? Would you like one for your town?",
-    "Would you like one of these posters for YOUR town?",
-    "Hi everyone! Would you like to see a poster for YOUR town?",
-    "Hi everyone! Here's today's SulaMaps sample.",
-    "Maps maps maps..."
-
+  "Would you like one of these posters for YOUR town?",
+  "Hi everyone! Would you like to see a poster for YOUR town?",
+  "Hi everyone! Here's today's SulaMaps sample.",
+  "Maps maps maps...",
+  "One of these would look great on your wall!"
 )
 (tweetText <-
   paste(sample(textPhrases, size = 1), "Check out my @etsy shop (link in bio).", sep = " ")
