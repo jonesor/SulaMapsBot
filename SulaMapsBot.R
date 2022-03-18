@@ -18,7 +18,7 @@ SulaMapsBot_token <- rtweet::create_token(
 
 # Hash tags ----
 alwaysHashTags <- paste0("#", c("ArtPoster", "cartography", "minimalist", "maps", "poster"))
-occasionalHashTags <- paste0("#", c("gift", "PerfectGift", "present","ArtMap", "placemap"))
+occasionalHashTags <- paste0("#", c("gift", "PerfectGift", "present","ArtMap", "PlaceMap"))
 
 # Tweet with example art
 
